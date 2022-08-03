@@ -1,8 +1,8 @@
 const express = require('express')
-
+const cors = require('cors')
 
 const server = express()
-
+server.use(cors())
 
 server.get('/', (req, res) => {
     res.status(200)
@@ -11,4 +11,4 @@ server.get('/', (req, res) => {
 
 })
 
-server.listen(process.env.PORT || 5050)
+server.listen(process.env.PORT || 5050, () => console.log('listening on port ....'))
